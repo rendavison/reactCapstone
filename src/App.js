@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
@@ -9,9 +9,11 @@ function App() {
   return (
     <>
       <Header/>
-      <Nav/>
-      <Main/>
-      <Footer/>
+      <div id="container">
+        <Nav/>
+        <Main/>
+        <Footer/>
+      </div>
     </>
   );
 }

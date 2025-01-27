@@ -3,7 +3,7 @@ const Footer = () => {
         <footer>
             <img src="" alt="Little Lemon logo"/>
 
-            <h3>Navigation</h3>
+            <h4>Navigation</h4>
             <ul>
                 <li>
                     <a href="/">Home</a>
@@ -25,7 +25,7 @@ const Footer = () => {
                 </li>
             </ul>
 
-            <h3>Contact</h3>
+            <h4>Contact</h4>
             <p>
                 123 Main Street<br />
                 Chicago, IL 12345
@@ -37,7 +37,7 @@ const Footer = () => {
                 <a href="mailto:example@email.com" aria-label="link to email restaurant">example@email.com</a>
             </p>
 
-            <h3>Follow Us</h3>
+            <h4>Follow Us</h4>
             <img src="" alt="facebook logo"/>
             <img src="" alt="instagram logo"/>
             <img src="" alt="twitter logo"/>
@@ -45,3 +45,5 @@ const Footer = () => {
         </footer>
     )
 }
+
+export default Footer;
