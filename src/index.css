@@ -22,7 +22,28 @@ body {
 
 nav {
   grid-area: nav;
-  background-color: black;
+  background-color: #495E57;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 2rem;
+  vertical-align: middle;
+}
+
+nav ul a {
+  color: #EDEFEE;
+}
+
+nav ul li img {
+  background-color: white;
+  width: 10rem;
+  padding: 0.5rem;
 }
 
 main {

@@ -3,19 +3,36 @@ const Nav = () => {
         <nav>
             <ul>
                 <a href="/about">
-                    <li>About</li>
+                    <li>
+                        <h3>About</h3>
+                    </li>
                 </a>
                 <a href="/menu">
-                    <li>Menu</li>
+                    <li>
+                        <h3>Menu</h3>
+                    </li>
                 </a>
                 <a href="/reservations">
-                    <li>Reservations</li>
+                    <li>
+                        <h3>Reservations</h3>
+                    </li>
                 </a>
+
+                <a href="/">
+                    <li>
+                        <img src="../logo.jpg" alt="little lemon logo"/>
+                    </li>
+                </a>
+
                 <a href="/order">
-                    <li>Order Online</li>
+                    <li>
+                        <h3>Order online</h3>
+                    </li>
                 </a>
                 <a href="/login">
-                    <li>Login</li>
+                    <li>
+                        <h3>Login</h3>
+                    </li>
                 </a>
             </ul>
         </nav>
