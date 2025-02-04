@@ -1,6 +1,10 @@
+import RezForm from "./RezForm";
+
 const Main = () => {
     return(
-        <main></main>
+        <main>
+            <RezForm />
+        </main>
     )
 }
 
