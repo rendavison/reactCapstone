@@ -2,38 +2,47 @@ const Nav = () => {
     return(
         <nav>
             <ul>
-                <a href="/about">
+                <section class="left">
                     <li>
-                        <h3>About</h3>
+                        <a href="/about">
+                            <h3>About</h3>
+                        </a>
                     </li>
-                </a>
-                <a href="/menu">
                     <li>
-                        <h3>Menu</h3>
+                        <a href="/menu">
+                            <h3>Menu</h3>
+                        </a>
                     </li>
-                </a>
-                <a href="/reservations">
                     <li>
-                        <h3>Reservations</h3>
+                        <a href="/reservations">
+                            <h3>Reservations</h3>
+                        </a>
                     </li>
-                </a>
+                </section>
 
-                <a href="/">
+                <section class="logo">
                     <li>
-                        <img src="../logo.jpg" alt="little lemon logo"/>
+                        <a href="/">
+                            <img src="../logo.jpg" alt="little lemon logo"/>
+                        </a>
                     </li>
-                </a>
+                </section>
 
-                <a href="/order">
+                <section class="right">
                     <li>
-                        <h3>Order online</h3>
+                        <a href="/order">
+                            <h3>Order online</h3>
+                        </a>
                     </li>
-                </a>
-                <a href="/login">
+
                     <li>
-                        <h3>Login</h3>
+                        <a href="/login">
+                            <button>
+                                <h3>login</h3>
+                            </button>
+                        </a>
                     </li>
-                </a>
+                </section>
             </ul>
         </nav>
     )
