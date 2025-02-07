@@ -141,16 +141,91 @@ main {
   grid-column: 2 / 11;
 }
 
-.rezform label {
-  text-transform: uppercase;
+.rezselect,
+.rezform,
+.date-time-ranges {
+  display: grid;
+  gap: 20px;
 }
 
+.rezselect {
+  background-color: #FBDABB;
+  border-radius: 100px;
+  box-sizing: border-box;
+  padding: 1.5rem 3rem;
+  border: 1px solid #333;
+  margin-top: 4rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.rezselect label,
+.rezform label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.rezselect input,
+.rezselect select {
+  margin-top: 1rem;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: "Markazi Text", serif;
+  background-color: transparent;
+  border: 0;
+}
+
+.date-time-ranges {
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.date-time-ranges button {
+  border-radius: 20px;
+}
+
+.date-time-ranges button h2 {
+  font-size: 2rem;
+}
+
+.add-border {
+  border-right: 1px solid #333;
+}
+
+.rezform {
+  grid-template-columns: repeat(2, 1fr);
+}
 
 /* FOOTER */
 
 footer {
   grid-area: footer;
+  display: grid;
   box-sizing: border-box;
-  padding: 0 50px;
+  padding: 20px 50px;
+  grid-column: 1 / span 12;
+  background-color: #EDEFEE;
+}
 
+footer .logo {
+  grid-column: 2 / 4;
+}
+
+footer .bottom-nav {
+  grid-column: 5 / span 1;
+}
+
+footer .bottom-nav ul {
+  padding: 0;
+}
+
+footer .bottom-nav ul li {
+  list-style-type: none;
+}
+
+footer .contact {
+  grid-column: 7 / span 2;
+}
+
+footer .socials {
+  grid-column: 9 / span 3;
 }
