@@ -24,7 +24,53 @@ button {
   color: #333;
 }
 
-/*NAV BAR*/
+p {
+  font-size: 1rem;
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-family: "Markazi Text", serif;
+}
+
+h3, h4, h5, h6 {
+  font-family: "Karla", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+
+/* NAV BAR */
 
 nav {
   grid-area: nav;
@@ -79,70 +125,32 @@ nav ul li a {
 nav ul li a img {
   background-color: white;
   box-sizing: border-box;
-  padding: 0.5rem 1rem;
+  padding: 0.33rem 1rem;
   margin: 0 1rem;
   width: 100%;
   border-radius: 10px;
 }
 
+
+/* MAIN CONTENT AREAS */
+
 main {
   grid-area: main;
   box-sizing: border-box;
   padding: 0 50px;
+  grid-column: 2 / 11;
 }
+
+.rezform label {
+  text-transform: uppercase;
+}
+
+
+/* FOOTER */
 
 footer {
   grid-area: footer;
   box-sizing: border-box;
   padding: 0 50px;
 
-}
-
-p {
-  font-size: 1rem;
-  font-family: "Karla", sans-serif;
-  font-weight: 400;
-}
-
-h1, h2 {
-  font-family: "Markazi Text", serif;
-}
-
-h3, h4, h5, h6 {
-  font-family: "Karla", sans-serif;
-}
-
-h1 {
-  font-size: 4rem;
-  font-weight: 500;
-}
-
-h2 {
-  font-size: 2.5rem;
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 1.25rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-h4 {
-  font-size: 1.125rem;
-  font-weight: 500;
-}
-
-h5 {
-  font-size: 1rem;
-  font-weight: 800;
-}
-
-h6 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.rezform label {
-  text-transform: uppercase;
 }
