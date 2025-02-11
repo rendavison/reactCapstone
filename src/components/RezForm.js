@@ -35,7 +35,7 @@ const RezForm = () => {
                 </section>
 
 
-                <fieldset name="allergies" required>
+                <fieldset name="allergies" class="double-col" required>
                     <legend>MY PARTY HAS FOOD ALLERGIES OR DIETARY RESTRICTIONS</legend><br/>
 
                     <input type="radio" id="allergies-yes" name="allergies-yes" value="Yes" checked></input>
@@ -44,11 +44,13 @@ const RezForm = () => {
                     <input type="radio" id="allergies-no" name="allergies-no" value="No"></input>
                     <label for="allergies-no">No</label>
                 </fieldset>
+                <br/>
+                <label class="double-col" for="allergy-list">WHAT ARE THEY? PLEASE SEE ABOVE FOR WHAT RESTRICTIONS WE CAN AND CANNOT ACCOMMODATE</label>
+                <textarea class="double-col" id="allergy-list" anme="allergy-list" rows="5" cols="33" required></textarea><br/>
 
-                <label for="allergy-list">WHAT ARE THEY? PLEASE SEE ABOVE FOR WHAT RESTRICTIONS WE CAN AND CANNOT ACCOMMODATE</label><br/>
-                <textarea id="allergy-list" anme="allergy-list" rows="5" cols="33" required></textarea><br/>
-
-                <input type="submit" value="book"></input>
+                <section name="submit" class="double-col">
+                    <input type="submit" value="book"></input>
+                </section>
             </form>
         </section>
     )
