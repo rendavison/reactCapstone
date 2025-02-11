@@ -1,46 +1,48 @@
+import  { Link } from "react-router-dom";
+
 const Nav = () => {
     return(
         <nav>
             <ul>
                 <section class="left">
                     <li>
-                        <a href="/about">
+                        <Link to="/about">
                             <h3>About</h3>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/menu">
+                        <Link to="/menu">
                             <h3>Menu</h3>
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="/reservations">
+                        <Link to="/reservations">
                             <h3>Reservations</h3>
-                        </a>
+                        </Link>
                     </li>
                 </section>
 
                 <section class="logo">
                     <li>
-                        <a href="/">
+                        <Link to="/">
                             <img src="../logo.jpg" alt="little lemon logo"/>
-                        </a>
+                        </Link>
                     </li>
                 </section>
 
                 <section class="right">
                     <li>
-                        <a href="/order">
+                        <Link to="/order">
                             <h3>Order online</h3>
-                        </a>
+                        </Link>
                     </li>
 
                     <li>
-                        <a href="/login">
+                        <Link to="/login">
                             <button>
                                 <h3>login</h3>
                             </button>
-                        </a>
+                        </Link>
                     </li>
                 </section>
             </ul>

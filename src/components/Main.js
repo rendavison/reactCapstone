@@ -1,14 +1,8 @@
-import RezInfo from "./RezInfo";
-import RezSelect from "./RezSelect";
-import RezForm from "./RezForm";
+import Booking from "./Booking";
 
 const Main = () => {
     return(
-        <main>
-            <RezInfo />
-            <RezSelect />
-            <RezForm />
-        </main>
+        <Booking />
     )
 }
 
