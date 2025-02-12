@@ -1,23 +1,50 @@
+import React, { useState } from "react";
+
 const RezForm = () => {
 
-    const rezDate = "";
-    const rezTime = "";
-    const rezPeople = "";
+    const [firstName, setFirstName] = useState("");
+    const [email, setEmail] = useState("");
+    const [occasion, setOccasion] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [tel, setTel] = useState("");
+    const [allergies, setAllergies] = useState("yes");
+    const [allergyList, setAllergyList] = useState("");
 
     return(
         <section>
-            <h1>Reservation for {rezDate} at {rezTime} for {rezPeople} people</h1>
-
             <form class="rezform">
                 <section name="col-1">
-                    <label for="fname">First Name:</label><br/>
-                    <input type="text" id="fname" name="fname" required></input><br/>
+                    <label for="fname">First Name <sup>*</sup></label><br/>
+                    <input
+                        type="text"
+                        id="fname"
+                        name="fname"
+                        required
+                        value={firstName}
+                        onChange={((e) => {
+                            setFirstName(e.target.value);
+                        })}>
+                    </input><br/>
 
-                    <label for="email">Email:</label><br/>
-                    <input type="email" id="email" name="email" required></input><br/>
+                    <label for="email">Email <sup>*</sup></label><br/>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={email}
+                        onChange={((e) => {
+                            setEmail(e.target.value);
+                        })}>
+                    </input><br/>
 
                     <label for="occasion">Occasion:</label><br/>
-                    <select>
+                    <select
+                        value={occasion}
+                        onChange={((e) => {
+                            setOccasion(e.target.value);
+                        })}>
+                        <option disabled selected value></option>
                         <option value="birthday">Birthday</option>
                         <option value="engagement">Engagement</option>
                         <option value="anniversary">Anniversary</option>
@@ -27,26 +54,78 @@ const RezForm = () => {
 
 
                 <section name="col-2">
-                    <label for="lname">Last Name:</label><br/>
-                    <input type="text" id="lname" name="lname" required></input><br/>
+                    <label for="lname">Last Name <sup>*</sup></label><br/>
+                    <input
+                        type="text"
+                        id="lname"
+                        name="lname"
+                        required
+                        value={lastName}
+                        onChange={((e) => {
+                            setLastName(e.target.value);
+                        })}>
+                    </input><br/>
 
-                    <label for="phone">Phone Number:</label><br/>
-                    <input type="tel" id="phone" name="phone" required></input><br/>
+                <label for="phone">Phone Number <sup>*</sup></label><br/>
+                    <input
+                        type="tel"
+                        id="tel"
+                        name="tel"
+                        required
+                        value={tel}
+                        onChange={((e) => {
+                            setTel(e.target.value);
+                        })}>
+                    </input><br/>
                 </section>
 
 
                 <fieldset name="allergies" class="double-col" required>
-                    <legend>MY PARTY HAS FOOD ALLERGIES OR DIETARY RESTRICTIONS</legend><br/>
+                    <legend>MY PARTY HAS FOOD ALLERGIES OR DIETARY RESTRICTIONS <sup>*</sup></legend><br/>
 
-                    <input type="radio" id="allergies-yes" name="allergies-yes" value="Yes" checked></input>
-                    <label for="allergies-yes">Yes</label>
+                    <label>
+                        <input
+                            type="radio"
+                            id="allergies-yes"
+                            name="allergies-yes"
+                            value="yes"
+                            checked={allergies === "yes"}
+                            onChange={((e) => {
+                                setAllergies(e.target.value)
+                            })}>
+                        </input>
+                        Yes
+                    </label>
 
-                    <input type="radio" id="allergies-no" name="allergies-no" value="No"></input>
-                    <label for="allergies-no">No</label>
+                    <label>
+                        <input
+                            type="radio"
+                            id="allergies-no"
+                            name="allergies-no"
+                            value="no"
+                            checked={allergies === "no"}
+                            onChange={((e) => {
+                                setAllergies(e.target.value)
+                            })}>
+                        </input>
+                        No
+                    </label>
                 </fieldset>
                 <br/>
+
                 <label class="double-col" for="allergy-list">WHAT ARE THEY? PLEASE SEE ABOVE FOR WHAT RESTRICTIONS WE CAN AND CANNOT ACCOMMODATE</label>
-                <textarea class="double-col" id="allergy-list" anme="allergy-list" rows="5" cols="33" required></textarea><br/>
+                <textarea
+                    class="double-col"
+                    id="allergy-list"
+                    name="allergy-list"
+                    rows="5"
+                    cols="33"
+                    required
+                    value={allergyList}
+                    onChange={((e) => {
+                        setAllergyList(e.target.value);
+                    })}>
+                </textarea><br/>
 
                 <section name="submit" class="double-col">
                     <input type="submit" value="book"></input>

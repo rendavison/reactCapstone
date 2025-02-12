@@ -1,12 +1,31 @@
+import React, { useState } from "react";
+
+function getDate() {
+    const today = new Date();
+    const dayOfWeek = today.toLocaleDateString({weekday: 'long'});
+    const month = today.getMonth();
+    const day = today.getDate();
+    return `${dayOfWeek}${month}${day}`;
+}
+
 const RezSelect = () => {
+
+    const [rezDate, setRezDate] = useState(getDate()); //make pretty
+    const [rezTime, setRezTime] = useState("12:00");
+    const [rezPeople, setRezPeople] = useState("2");
+
     return (
         <section>
             <fieldset class="rezselect">
                 <div class="add-border">
                     <label for="guests">Guests</label><br/>
-                    <select>
+                    <select
+                        value={rezPeople}
+                        onChange={((e) => {
+                            setRezPeople(e.target.value);
+                        })}>
                         <option value="one">1 person</option>
-                        <option value="two">2 people</option>
+                        <option value="two" selected>2 people</option>
                         <option value="three">3 people</option>
                         <option value="four">4 people</option>
                         <option value="five">5 people</option>
@@ -21,11 +40,25 @@ const RezSelect = () => {
                 </div>
                 <div class="add-border">
                     <label for="date">Date</label><br/>
-                    <input type="date" id="date" name="date"></input>
+                    <input
+                        type="date"
+                        id="date"
+                        name="date"
+                        value={rezDate}
+                        onChange={((e) => {
+                            setRezDate(e.target.value);
+                        })}>
+                    </input>
                 </div>
                 <div>
                     <label for="time">Time</label><br/>
-                    <input type="time"></input>
+                    <input
+                    type="time"
+                    value={rezTime}
+                    onChange={((e) => {
+                        setRezTime(e.target.value);
+                    })}>
+                </input>
                 </div>
             </fieldset>
 
@@ -67,6 +100,8 @@ const RezSelect = () => {
                     <h2>2:45 PM</h2>
                 </button>
             </section>
+
+            <h1>Reservation for {rezDate} at {rezTime} for {rezPeople} people</h1>
         </section>
     )
 }
