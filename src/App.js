@@ -3,9 +3,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import Booking from "./components/Booking";
 import './App.css';
-import  { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -16,10 +14,6 @@ function App() {
         <Main/>
         <Footer/>
       </div>
-
-      <Routes>
-        <Route path="/reservations" element={<Booking />}></Route>
-      </Routes>
     </>
   );
 }

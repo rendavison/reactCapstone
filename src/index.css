@@ -70,6 +70,18 @@ h6 {
   font-weight: 700;
 }
 
+/* SMARTPHONE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+  .rezselect {
+    grid-template-columns: 1;
+  }
+
+  .date-time-ranges button {
+    display: block;
+  }
+}
+
 
 /* NAV BAR */
 
@@ -140,6 +152,8 @@ main {
   box-sizing: border-box;
   padding: 0 50px;
   grid-column: 2 / 12;
+  background-color: #EDEFEE;
+  text-align: left;
 }
 
 .rezselect,
