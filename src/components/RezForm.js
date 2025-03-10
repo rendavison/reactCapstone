@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { validateEmail } from "../utils/validateEmail";
 
 const RezForm = () => {
 
@@ -6,13 +7,56 @@ const RezForm = () => {
     const [email, setEmail] = useState("");
     const [occasion, setOccasion] = useState("");
     const [lastName, setLastName] = useState("");
-    const [tel, setTel] = useState("");
+    const [tel, setTel] = useState({
+        value: "",
+        isTouched: false,
+    });
     const [allergies, setAllergies] = useState("yes");
     const [allergyList, setAllergyList] = useState("");
 
+    const emailErrorMessage = () => {
+        return(
+          <p className="field-error">Please enter a valid email address</p>
+        );
+    };
+
+    const telErrorMessage = () => {
+        return(
+          <p className="field-error">Please enter a valid telephone number</p>
+        );
+    };
+
+    const isFormValid = () => {
+        return(
+            firstName &&
+            validateEmail(email) &&
+            occasion &&
+            lastName &&
+            tel &&
+            allergies &&
+            allergyList
+        )
+    }
+
+    const clearForm = () => {
+        setFirstName("");
+        setEmail("");
+        setOccasion("");
+        setLastName("");
+        setTel("");
+        setAllergies("yes");
+        setAllergyList("");
+      };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert("Your reservation has been received!");
+        clearForm();
+       };
+
     return(
         <section>
-            <form class="rezform">
+            <form class="rezform" onSubmit={handleSubmit}>
                 <section name="col-1">
                     <label for="fname">First Name <sup>*</sup></label><br/>
                     <input
@@ -127,8 +171,8 @@ const RezForm = () => {
                     })}>
                 </textarea><br/>
 
-                <section name="submit" class="double-col">
-                    <input type="submit" value="book"></input>
+                <section name="submit" class="double-col" aria-label="On Click">
+                    <input type="submit" value="book" disabled={!isFormValid()}></input>
                 </section>
             </form>
         </section>

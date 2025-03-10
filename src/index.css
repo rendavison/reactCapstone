@@ -31,6 +31,10 @@ p {
   font-weight: 400;
 }
 
+.field-error {
+  color: red;
+}
+
 h1, h2 {
   font-family: "Markazi Text", serif;
 }

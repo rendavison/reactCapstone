@@ -43,6 +43,7 @@ const RezSelect = (props) => {
                 <div class="add-border">
                     <label for="guests">Guests</label><br/>
                     <select
+                        required
                         value={rezPeople}
                         onChange={((e) => {
                             setRezPeople(e.target.value);
@@ -87,7 +88,7 @@ const RezSelect = (props) => {
 
             <section class="date-time-ranges">
                 {populateTimes({rezTime}).map(item => (
-                    <button>
+                    <button key={rezTime}>
                         <h2>{item}</h2>
                     </button>
                 ))}
