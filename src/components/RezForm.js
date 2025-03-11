@@ -56,9 +56,9 @@ const RezForm = () => {
 
     return(
         <section>
-            <form class="rezform" onSubmit={handleSubmit}>
+            <form className="rezform" onSubmit={handleSubmit}>
                 <section name="col-1">
-                    <label for="fname">First Name <sup>*</sup></label><br/>
+                    <label htmlFor="fname">First Name <sup>*</sup></label><br/>
                     <input
                         type="text"
                         id="fname"
@@ -70,7 +70,7 @@ const RezForm = () => {
                         })}>
                     </input><br/>
 
-                    <label for="email">Email <sup>*</sup></label><br/>
+                    <label htmlFor="email">Email <sup>*</sup></label><br/>
                     <input
                         type="email"
                         id="email"
@@ -82,7 +82,7 @@ const RezForm = () => {
                         })}>
                     </input><br/>
 
-                    <label for="occasion">Occasion:</label><br/>
+                    <label htmlFor="occasion">Occasion:</label><br/>
                     <select
                         value={occasion}
                         onChange={((e) => {
@@ -98,7 +98,7 @@ const RezForm = () => {
 
 
                 <section name="col-2">
-                    <label for="lname">Last Name <sup>*</sup></label><br/>
+                    <label htmlFor="lname">Last Name <sup>*</sup></label><br/>
                     <input
                         type="text"
                         id="lname"
@@ -110,7 +110,7 @@ const RezForm = () => {
                         })}>
                     </input><br/>
 
-                <label for="phone">Phone Number <sup>*</sup></label><br/>
+                <label htmlFor="phone">Phone Number <sup>*</sup></label><br/>
                     <input
                         type="tel"
                         id="tel"
@@ -124,7 +124,7 @@ const RezForm = () => {
                 </section>
 
 
-                <fieldset name="allergies" class="double-col" required>
+                <fieldset name="allergies" className="double-col" required>
                     <legend>MY PARTY HAS FOOD ALLERGIES OR DIETARY RESTRICTIONS <sup>*</sup></legend><br/>
 
                     <label>
@@ -157,9 +157,9 @@ const RezForm = () => {
                 </fieldset>
                 <br/>
 
-                <label class="double-col" for="allergy-list">WHAT ARE THEY? PLEASE SEE ABOVE FOR WHAT RESTRICTIONS WE CAN AND CANNOT ACCOMMODATE</label>
+                <label className="double-col" htmlFor="allergy-list">WHAT ARE THEY? PLEASE SEE ABOVE FOR WHAT RESTRICTIONS WE CAN AND CANNOT ACCOMMODATE</label>
                 <textarea
-                    class="double-col"
+                    className="double-col"
                     id="allergy-list"
                     name="allergy-list"
                     rows="5"
@@ -171,7 +171,7 @@ const RezForm = () => {
                     })}>
                 </textarea><br/>
 
-                <section name="submit" class="double-col" aria-label="On Click">
+                <section name="submit" className="double-col" aria-label="On Click">
                     <input type="submit" value="book" disabled={!isFormValid()}></input>
                 </section>
             </form>

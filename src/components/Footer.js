@@ -1,11 +1,11 @@
 const Footer = () => {
     return(
         <footer>
-            <section class="logo">
+            <section className="logo">
                 <img src="" alt="Little Lemon logo"/>
             </section>
 
-            <section class="bottom-nav">
+            <section className="bottom-nav">
             <h4>Navigation</h4>
                 <ul>
                     <li>
@@ -29,7 +29,7 @@ const Footer = () => {
                 </ul>
             </section>
 
-            <section class="contact">
+            <section className="contact">
                 <h4>Contact</h4>
                 <p>
                     123 Main Street<br />
@@ -43,7 +43,7 @@ const Footer = () => {
                 </p>
             </section>
 
-            <section class="socials">
+            <section className="socials">
                 <h4>Follow Us</h4>
                 <img src="" alt="facebook logo"/>
                 <img src="" alt="instagram logo"/>

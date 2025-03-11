@@ -4,7 +4,7 @@ const Nav = () => {
     return(
         <nav>
             <ul>
-                <section class="left">
+                <section className="left">
                     <li>
                         <Link to="/about">
                             <h3>About</h3>
@@ -22,7 +22,7 @@ const Nav = () => {
                     </li>
                 </section>
 
-                <section class="logo">
+                <section className="logo">
                     <li>
                         <Link to="/">
                             <img src="../logo.jpg" alt="little lemon logo"/>
@@ -30,7 +30,7 @@ const Nav = () => {
                     </li>
                 </section>
 
-                <section class="right">
+                <section className="right">
                     <li>
                         <Link to="/order">
                             <h3>Order online</h3>

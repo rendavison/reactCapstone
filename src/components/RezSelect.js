@@ -19,29 +19,26 @@ const RezSelect = (props) => {
         //finds the user's time in the array of available times
         //ADD ERROR IF TIME NOT IN ARRAY
         function findTime(time, timeRange) {
+            console.log(time, timeRange);
             const selectedTime = timeRange.find((e) => e === time);
-            return timeRange.indexOf(selectedTime);
+            const selectedIndex = timeRange.indexOf(selectedTime);
+            if (selectedIndex < 0) {
+                return 0;
+            } else {
+                return selectedIndex;
+            }
         }
 
         //generates a list of the next 12 times
-        //ADD ERROR IF PAST 8:00PM
         const startingIndex = findTime(userTime, props.availableTimes); //finds index of user inputted time
-        const displayedTimes = [props.availableTimes[startingIndex]]; //starts at that index in list of available times
-        let currentIndex = startingIndex; //resets current index to keep moving along the array
-
-        for (let i = 0; (i < 12); i++) {
-            currentIndex += 1;
-            displayedTimes.push(props.availableTimes[currentIndex]);
-        }
-
-        return displayedTimes; //returns array of times to display
+        return props.availableTimes.slice(startingIndex);
     }
 
     return (
         <section>
-            <fieldset class="rezselect">
-                <div class="add-border">
-                    <label for="guests">Guests</label><br/>
+            <fieldset className="rezselect">
+                <div className="add-border">
+                    <label htmlFor="guests">Guests</label><br/>
                     <select
                         required
                         value={rezPeople}
@@ -62,8 +59,8 @@ const RezSelect = (props) => {
                         <option value="twelve">12 people</option>
                     </select>
                 </div>
-                <div class="add-border">
-                    <label for="date">Date</label><br/>
+                <div className="add-border">
+                    <label htmlFor="date">Date</label><br/>
                     <input
                         type="date"
                         id="date"
@@ -75,9 +72,10 @@ const RezSelect = (props) => {
                     </input>
                 </div>
                 <div>
-                    <label for="time">Time</label><br/>
+                    <label htmlFor="time">Time</label><br/>
                     <input
                     type="time"
+                    step={60 * 15 /* seconds */}
                     value={rezTime}
                     onChange={((e) => {
                         setRezTime(e.target.value);
@@ -86,15 +84,15 @@ const RezSelect = (props) => {
                 </div>
             </fieldset>
 
-            <section class="date-time-ranges">
-                {populateTimes({rezTime}).map(item => (
-                    <button key={rezTime}>
+            <section className="date-time-ranges">
+                {populateTimes(rezTime).map((item) => (
+                    <button key={item}>
                         <h2>{item}</h2>
                     </button>
                 ))}
             </section>
 
-            <h1>Reservation for {rezDate} at {rezTime} for {rezPeople} people</h1>
+            <h1>Reservation for {rezDate} at {rezTime} for a table of {rezPeople}</h1>
         </section>
     )
 }
