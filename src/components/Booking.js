@@ -1,7 +1,8 @@
 import RezInfo from "./RezInfo";
 import RezSelect from "./RezSelect";
-import RezForm from "./RezForm";
-import { useReducer } from 'react';
+//import RezForm from "./RezForm";
+import RezFormFormik from "./RezFormFormik";
+import { useReducer, redirect } from 'react';
 
 export function initializeTimes() {
     // eslint-disable-next-line no-undef
@@ -13,8 +14,14 @@ export function initializeTimes() {
 export function updateTimes(availableTimes, date) {
     // eslint-disable-next-line no-undef
     const data = fetchAPI(new Date(date));
-    console.log("APIresponse", data);
     return data;
+}
+
+export function submitForm(formData) {
+    // eslint-disable-next-line no-undef
+    if (submitAPI(formData)) {
+        return redirect("/confirmation");
+    }
 }
 
 // { type: 'UPDATE_TIMES', date: new Date() }
@@ -31,7 +38,7 @@ const Booking = () => {
                 availableTimes={availableTimes}
                 dispatch={dispatch}
             />
-            <RezForm />
+            <RezFormFormik submitForm={submitForm}/>
         </main>
     )
 }

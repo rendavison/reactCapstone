@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { Formik } from 'formik';
 import { validateEmail } from "../utils/validateEmail";
 
-const RezForm = () => {
+const RezForm = (props) => {
 
     const [firstName, setFirstName] = useState("");
     const [email, setEmail] = useState("");
@@ -56,7 +57,7 @@ const RezForm = () => {
 
     return(
         <section>
-            <form className="rezform" onSubmit={handleSubmit}>
+            <form className="rezform" onSubmit={props.submitForm(formData)}>
                 <section name="col-1">
                     <label htmlFor="fname">First Name <sup>*</sup></label><br/>
                     <input
