@@ -19,7 +19,6 @@ const RezSelect = (props) => {
         //finds the user's time in the array of available times
         //ADD ERROR IF TIME NOT IN ARRAY
         function findTime(time, timeRange) {
-            console.log(time, timeRange);
             const selectedTime = timeRange.find((e) => e === time);
             const selectedIndex = timeRange.indexOf(selectedTime);
             if (selectedIndex < 0) {
@@ -33,6 +32,7 @@ const RezSelect = (props) => {
         const startingIndex = findTime(userTime, props.availableTimes); //finds index of user inputted time
         return props.availableTimes.slice(startingIndex);
     }
+
 
     return (
         <section>
@@ -68,29 +68,32 @@ const RezSelect = (props) => {
                         value={rezDate}
                         onChange={((e) => {
                             setRezDate(e.target.value);
+                            props.dispatch(e.target.value);
                         })}>
                     </input>
                 </div>
                 <div>
                     <label htmlFor="time">Time</label><br/>
                     <input
-                    type="time"
-                    step={60 * 15 /* seconds */}
-                    value={rezTime}
-                    onChange={((e) => {
-                        setRezTime(e.target.value);
-                    })}>
-                </input>
+                        type="time"
+                        step={60 * 15 /* seconds */}
+                        value={rezTime}
+                        onChange={((e) => {
+                            setRezTime(e.target.value);
+                        })}>
+                    </input>
                 </div>
             </fieldset>
 
-            <section className="date-time-ranges">
-                {populateTimes(rezTime).map((item) => (
-                    <button key={item}>
-                        <h2>{item}</h2>
-                    </button>
-                ))}
-            </section>
+            {props.availableTimes.length > 0 &&
+                <section className="date-time-ranges">
+                    {populateTimes(rezTime).map((item) => (
+                        <button key={item}>
+                            <h2>{item}</h2>
+                        </button>
+                    ))}
+                </section>
+            }
 
             <h1>Reservation for {rezDate} at {rezTime} for a table of {rezPeople}</h1>
         </section>
