@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import "yup-phone-lite";
+import { SubmitForm } from "./SubmitForm";
 
 const RezFormFormik = (props) => {
 
@@ -29,9 +30,7 @@ const RezFormFormik = (props) => {
             allergies: Yup.string()
                 .required('An allergy selection is required'),
         }),
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 6))
-        }
+        onSubmit: props.submitForm
     })
 
     return(
@@ -48,7 +47,7 @@ const RezFormFormik = (props) => {
                         onBlur={formik.handleBlur}>
                     </input>
                     {formik.touched.firstName && formik.errors.firstName ? (
-                        <p>{formik.errors.firstName}</p>
+                        <p className="error">{formik.errors.firstName}</p>
                     ) : null}
                     <br/>
 
@@ -62,7 +61,7 @@ const RezFormFormik = (props) => {
                         onBlur={formik.handleBlur}>
                     </input>
                     {formik.touched.email && formik.errors.email ? (
-                        <p>{formik.errors.email}</p>
+                        <p className="error">{formik.errors.email}</p>
                     ) : null}
                     <br/>
 
@@ -90,7 +89,7 @@ const RezFormFormik = (props) => {
                         onBlur={formik.handleBlur}>
                     </input>
                     {formik.touched.lastName && formik.errors.lastName ? (
-                        <p>{formik.errors.lastName}</p>
+                        <p className="error">{formik.errors.lastName}</p>
                     ) : null}
                     <br/>
 
@@ -104,7 +103,7 @@ const RezFormFormik = (props) => {
                         onBlur={formik.handleBlur}>
                     </input>
                     {formik.touched.tel && formik.errors.tel ? (
-                        <p>{formik.errors.tel}</p>
+                        <p className="error">{formik.errors.tel}</p>
                     ) : null}
                     <br/>
                 </section>
@@ -135,7 +134,7 @@ const RezFormFormik = (props) => {
                     </label>
                 </fieldset>
                 {formik.touched.allergies && formik.errors.allergies ? (
-                    <p>{formik.errors.allergies}</p>
+                    <p className="error">{formik.errors.allergies}</p>
                 ) : null}
                 <br/>
 

@@ -31,8 +31,10 @@ p {
   font-weight: 400;
 }
 
-.field-error {
+.error {
   color: red;
+  font-weight: 800;
+  margin-top: -1rem;
 }
 
 h1, h2 {
@@ -259,6 +261,7 @@ main {
 
 .rezform section input[type="submit"] {
   width: 12.5%;
+  min-width: 150px;
   background-color: #F4CE14;
   padding: 2rem;
   border-radius: 50px;
