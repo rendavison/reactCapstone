@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import Booking, { initializeTimes } from './components/Booking';
+import Booking, { initializeTimes, updateTimes, fetchAPI } from './components/Booking';
+import RezFormFormik from './components/RezFormFormik';
 
 test.skip('renders learn react link', () => {
   render(<App />);
@@ -15,5 +16,6 @@ test('Renders the Reservation Form heading', () => {
 })
 
 test('initializeTimes returns an array of time strings', () => {
+  window.fetchAPI = jest.fn();
   expect(initializeTimes()).length > 0;
 })

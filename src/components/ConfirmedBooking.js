@@ -1,6 +1,6 @@
 const ConfirmedBooking = () => {
     return (
-        <section>
+        <section className="confirmed">
             <h2>Thank you! Your booking is confirmed.</h2>
         </section>
     )

@@ -2,7 +2,6 @@ import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import "yup-phone-lite";
-import { SubmitForm } from "./SubmitForm";
 
 const RezFormFormik = (props) => {
 
