@@ -14,6 +14,18 @@ const RezSelect = (props) => {
     const [rezTime, setRezTime] = useState("12:00");
     const [rezPeople, setRezPeople] = useState("2");
 
+    function convertTime(time) {
+        const separateTime = time.split(":");
+        const hour = parseInt(separateTime[0]);
+        const minute = separateTime[1];
+        if (hour > 12) {
+            const pm = hour - 12;
+            const newHour = pm.toString() + ":" + minute;
+            console.log(newHour);
+            return newHour;
+        }
+    }
+
     function populateTimes(userTime) {
 
         //finds the user's time in the array of available times
@@ -89,7 +101,7 @@ const RezSelect = (props) => {
                 <section className="date-time-ranges">
                     {populateTimes(rezTime).map((item) => (
                         <button key={item}>
-                            <h2>{item}</h2>
+                            <h2>{convertTime(item)}</h2>
                         </button>
                     ))}
                 </section>

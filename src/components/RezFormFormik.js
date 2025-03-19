@@ -144,7 +144,6 @@ const RezFormFormik = (props) => {
                     name="allergyList"
                     rows="5"
                     cols="33"
-                    required
                     value={formik.values.allergyList}
                     onChange={formik.handleChange}>
                 </textarea><br/>

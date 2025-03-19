@@ -12,24 +12,20 @@ export function initializeTimes() {
 
 export function updateTimes(availableTimes, date) {
     const data = fetchAPI(new Date(date));
+    console.log(date, data);
     return data;
 }
-
-// { type: 'UPDATE_TIMES', date: new Date() }
 
 const Booking = () => {
 
     const navigate = useNavigate();
-
     function confirmBooking(formData) {
         if(submitAPI(formData)) {
-            console.log("pressed")
             navigate("/confirmation");
         }
     }
 
     const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes);
-    // dispatch = (date) => { updateTimes(previousAvailableTimes, date) }
 
     return(
         <main>
