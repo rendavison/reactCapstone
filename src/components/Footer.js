@@ -2,7 +2,7 @@ const Footer = () => {
     return(
         <footer>
             <section className="logo">
-                <img src="" alt="Little Lemon logo"/>
+                <img src="../logo-vertical.png" alt="little lemon logo"/>
             </section>
 
             <section className="bottom-nav">
@@ -45,10 +45,10 @@ const Footer = () => {
 
             <section className="socials">
                 <h4>Follow Us</h4>
-                <img src="" alt="facebook logo"/>
-                <img src="" alt="instagram logo"/>
-                <img src="" alt="twitter logo"/>
-                <img src="" alt="tiktok logo"/>
+                <img src="../facebook.png" alt="facebook logo"/>
+                <img src="../instagram.png" alt="instagram logo"/>
+                <img src="../twitter.png" alt="twitter logo"/>
+                <img src="../tiktok.png" alt="tiktok logo"/>
             </section>
         </footer>
     )
