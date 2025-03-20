@@ -293,9 +293,12 @@ footer {
   display: grid;
   box-sizing: border-box;
   padding: 20px 50px;
-  grid-column: 1 / span 12;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-areas:
+    "logo bottom-nav contact socials";
   background-color: #fff;
   line-height: 1.33;
+  grid-column: 1 / span 12;
 }
 
 footer a {
@@ -309,19 +312,19 @@ footer a {
 footer a:hover {
   opacity: 0.5;
   transition-duration: 0.5s;
-
 }
 
 footer .logo {
-  grid-column: 2 / 3;
+  grid-area: logo;
+  grid-column: 2 / span 2;
 }
 
 footer .logo img {
-  width: 50%;
   margin-top: 1.5rem;
 }
 
 footer .bottom-nav {
+  grid-area: bottom-nav;
   grid-column: 4 / span 1;
 }
 
@@ -334,14 +337,16 @@ footer .bottom-nav ul li {
 }
 
 footer .contact {
+  grid-area: contact;
   grid-column: 6 / span 2;
 }
 
 footer .socials {
+  grid-area: socials;
   grid-column: 8 / span 3;
 }
 
 footer .socials img {
-  margin-right: 1rem;
-  width: 5%;
+  margin-right: 2rem;
+  width: 10%;
 }

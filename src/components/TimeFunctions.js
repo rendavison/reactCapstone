@@ -19,7 +19,7 @@ function convertTime(time) { //changes time to 12hr from 24hr
 }
 
 //finds the user's time in the array of available times
-// returns the index of the closest time in available times AFTER the user's time
+//returns the index of the closest time in available times AFTER the user's time
 function findTime(time, timeRange) {
 
     const selectedTime = timeRange.find((e) => e === time);
