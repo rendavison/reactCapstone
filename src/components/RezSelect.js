@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 function getDate() {
     const today = new Date();
-    //const dayOfWeek = today.toLocaleDateString({weekday: 'long'});
+    const dayOfWeek = today.toLocaleDateString({weekday: 'long'});
     const month = today.getMonth();
     const day = today.getDate();
-    return `${month} ${day}`;
+    return `${dayOfWeek} ${month} ${day}`;
 }
 
 const RezSelect = (props) => {
@@ -64,7 +64,7 @@ const RezSelect = (props) => {
             }
         }
 
-        //generates a list of the next 12 times
+        //generates a list of the next available times, up to 12
         const startingIndex = findTime(userTime, props.availableTimes); //finds index of user inputted time
         return props.availableTimes.slice(startingIndex);
     }
@@ -131,7 +131,7 @@ const RezSelect = (props) => {
                 </section>
             }
 
-            <h1>Reservation for {rezDate} at {convertTime(rezTime)} for a table of {rezPeople}</h1>
+            {/* <h1>Reservation for {getDate(rezDate)} at {convertTime(rezTime)} for a table of {rezPeople}</h1> */}
         </section>
     )
 }

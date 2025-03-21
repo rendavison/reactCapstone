@@ -1,18 +1,24 @@
 const RezInfo = () => {
     return (
         <section>
-            <h1>Little Lemon Reservation Policies</h1>
-
+            <h1 className="rez">Reservations at Little Lemon</h1>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque  nec finibus magna, at semper elit. In sit amet tellus ut eros ornare  vestibulum. Aliquam erat volutpat. Aliquam pharetra nisi nisl, quis  mattis magna dictum vitae. Aliquam suscipit lacus at arcu ultrices  sollicitudin accumsan quis orci. Suspendisse potenti. Fusce gravida,  massa at pellentesque accumsan, massa odio mollis purus, sed maximus  tortor dolor quis lacus.
+                At Little Lemon, we strive to provide a delightful dining experience for all our guests.
+                Reservations are recommended, especially for weekends and larger parties.
+                Please inform us of any food allergies or dietary restrictions when booking so our kitchen can accommodate your needs. 
+                We kindly ask for at least 24 hours' notice for cancellations or changes.
             </p>
 
-            <ul>
-                <li>Ut ac volutpat mi.</li>
-                <li>Class aptent taciti sociosqu ad litora torquent per conubia nostra</li>
-                <li>Per inceptos himenaeos. Fusce ex nisi, dignissim eget  erat et</li>
-                <li>Sodales scelerisque ipsum.</li>
-            </ul>
+            <p>
+                <b>Reservation Policies:</b>
+
+                <ul>
+                    <li>Reservations can be made online or by phone.</li>
+                    <li>A credit card may be required for large party bookings.</li>
+                    <li>Please arrive on time; tables are held for 15 minutes.</li>
+                    <li>Let us know about allergies in advance for safe meal preparation.</li>
+                </ul>
+            </p>
         </section>
     )
 }

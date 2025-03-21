@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 16px;
   font-family: "Karla", sans-serif;
   background-color: #EDEFEE;
 }
@@ -26,9 +25,10 @@ button {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-family: "Karla", sans-serif;
   font-weight: 400;
+  line-height: 1.3;
 }
 
 .error {
@@ -74,18 +74,6 @@ h5 {
 h6 {
   font-size: 1rem;
   font-weight: 700;
-}
-
-/* SMARTPHONE RESPONSIVENESS */
-
-@media (max-width: 600px) {
-  .rezselect {
-    grid-template-columns: 1;
-  }
-
-  .date-time-ranges button {
-    display: block;
-  }
 }
 
 
@@ -162,6 +150,10 @@ main {
   text-align: left;
 }
 
+h1.rez {
+  margin-bottom: 1rem;
+}
+
 .rezselect,
 .rezform,
 .date-time-ranges {
@@ -197,6 +189,7 @@ main {
 
 .date-time-ranges {
   margin-top: 2rem;
+  margin-bottom: 4rem;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -224,6 +217,7 @@ main {
 
 .rezform {
   grid-template-columns: repeat(2, 1fr);
+  margin-top: 3rem;
 }
 
 .rezform section > input,
@@ -284,6 +278,10 @@ main {
 
 .confirmed h2 {
   text-align: center;
+}
+
+.mobile-only {
+  display: none;
 }
 
 /* FOOTER */
@@ -349,4 +347,136 @@ footer .socials {
 footer .socials img {
   margin-right: 2rem;
   width: 10%;
+}
+
+
+/* SMARTPHONE RESPONSIVENESS */
+
+@media only screen and (max-width: 600px) {
+  .mobile-only {
+    display: block;
+  };
+
+  .desktop-only {
+    display: none;
+  }
+
+  h1 {
+    margin: 1rem 0;
+    font-size: 3rem;
+    line-height: 1.1;
+    padding: 0;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  nav {
+    padding: 0 10px;
+  }
+
+  #mobile-nav {
+    display: inline-block;
+    position: absolute;
+    right: 2rem;
+    background-color: #495E57;
+    cursor: pointer;
+  }
+
+  #mobile-nav i {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .mobile-links {
+    background-color: #495E57;
+    width: 0;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: -1rem;
+    overflow-x: hidden;
+    padding: 2.5rem 0 0 1rem;
+    transition: 0.5s;
+    text-align: left;
+  }
+
+  .mobile-links .show {
+    width: 250px;
+  }
+
+  nav ul .left,
+  nav ul .right {
+    display: none;
+  }
+
+  nav ul .logo {
+    grid-column: 1;
+  };
+
+  nav ul .logo li a img {
+    padding: 0.5rem 1.25rem;
+    width: 125%;
+    border-radius: 100px;
+    margin: 0 0.75rem;
+  }
+
+  main {
+    display: block;
+    padding: 0 10px;
+  }
+
+  .rezselect {
+    display: block;
+    border-radius: 20px;
+    padding: 2rem;
+  }
+
+  .rezselect .add-border {
+    border: 0;
+    margin-bottom: 2rem;
+  }
+
+  .rezselect select {
+    margin-top: 0;
+  }
+
+  .date-time-ranges {
+    grid-template-columns: 1fr;
+  }
+
+  .date-time-ranges button {
+    display: block;
+  }
+
+  .rezform {
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .rezform section input[type="submit"] {
+    padding: 1rem;
+  }
+
+  .confirmed h2 {
+    padding: 0 2rem;
+  }
+
+  footer {
+    display: block;
+    text-align: center;
+  }
+
+  footer h4 {
+    font-weight: 800;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  footer .socials img {
+    margin: 0 0.5rem;
+    width: 15%;
+  }
 }
