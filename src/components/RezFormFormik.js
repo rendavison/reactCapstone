@@ -94,6 +94,7 @@ const RezFormFormik = (props) => {
 
                 <label htmlFor="phone">Phone Number <sup>*</sup></label><br/>
                     <input
+                        htmlFor="tel"
                         type="tel"
                         id="tel"
                         name="tel"

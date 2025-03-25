@@ -6,11 +6,11 @@ const Nav = () => {
         <nav>
             <ul>
                 {/* mobile nav links */}
-                <section id="mobile-nav" class="mobile-only" onclick="openNav()">
+                <section id="mobile-nav" className="mobile-only" onclick="openNav()">
                     <i class="fas fa-bars"></i>
                 </section>
 
-                <section className="mobile-links" id="sideNav">
+                <section className="mobile-links mobile-only" id="sideNav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <li>
                         <Link to="/about">

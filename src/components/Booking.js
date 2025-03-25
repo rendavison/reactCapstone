@@ -12,7 +12,6 @@ export function initializeTimes() {
 
 export function updateTimes(availableTimes, date) {
     const data = fetchAPI(new Date(date));
-    console.log(date, data);
     return data;
 }
 
